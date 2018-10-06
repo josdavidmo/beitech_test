@@ -13,18 +13,12 @@ Se desea hacer las siguientes adiciones:
 
 Ejemplo:
 
-```
-Customer Available Products
-```
-```
-Manny Bharma Product A, Product B, Product C
-```
-```
-Alan Briggs Product B
-```
-```
-Mike Simm Product A, Product D
-```
+| Customer | Available Products |
+| ------------- | ------------- |
+| Manny Bharma | Product A, Product B, Product C |
+| Alan Briggs | Product B |
+| Mike Simm | Product A, Product D |
+
 2. Se debe poder establecer el precio de cada producto.
 
 Agregue al diagrama las columnas y entidades que considere necesarias y cree la
@@ -45,28 +39,11 @@ siguientes operaciones:
 Cree una página html que permita seleccionar un cliente y presente las órdenes del
 último mes usando el método listar órdenes del servicio web.
 
-```
-Creation
-Date
-```
-```
-Order ID Total $ Delivery Address Products
-```
-```
-01 - 05 - 2017 84564 $ 30.56 15 Queens Park Road,
-W32 YYY, UK
-```
-```
-2 x Product A
-1 x Product B
-```
-```
-02 - 05 - 2017 84566 $ 11.00 12001 White Oak
-Avenue, 12332. USA
-```
-```
-1 x Product C
-```
+| Creation Date | Order ID | Total $ | Delivery Address | Products |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| 01 - 05 - 2017 | 84564 | $ 30.56 | 15 | Queens Park Road, W32 YYY, UK | 2 x Product A, 1 x Product B |
+| 02 - 05 - 2017 | 84566 | $ 11.00 | 12001 | White Oak Avenue, 12332. USA | 1 x Product C |
+
 Notas
 
 - Los datos de prueba para las tablas clientes, productos y productos permitidos se deben insertar directamente en la base de datos.
