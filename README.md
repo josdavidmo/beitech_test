@@ -8,8 +8,7 @@ En una base de datos con las siguientes entidades:
 
 Se desea hacer las siguientes adiciones:
 
-1. Los clientes ahora solo tendrán un conjunto de productos disponibles, es decir,
-    para cada cliente debe ser posible escoger qué productos puede comprar.
+1. Los clientes ahora solo tendrán un conjunto de productos disponibles, es decir, para cada cliente debe ser posible escoger qué productos puede comprar.
 
 Ejemplo:
 
@@ -21,17 +20,13 @@ Ejemplo:
 
 2. Se debe poder establecer el precio de cada producto.
 
-Agregue al diagrama las columnas y entidades que considere necesarias y cree la
-base de datos.
+Agregue al diagrama las columnas y entidades que considere necesarias y cree la base de datos.
 
 ## Parte 2 - Crear un servicio web REST
 
-```
-Utilizando Python 3, implemente un servicio web REST que permita realizar las
-siguientes operaciones:
-```
-1. Crear una órden para un cliente con hasta máximo 5 productos. Tenga en cuenta
-    que sólo algunos productos están permitidos por cliente.
+Utilizando Python 3, implemente un servicio web REST que permita realizar las siguientes operaciones:
+
+1. Crear una órden para un cliente con hasta máximo 5 productos. Tenga en cuenta que sólo algunos productos están permitidos por cliente.
 2. Listar las órdenes de un cliente por un rango de fechas.
 
 ## Parte 3
