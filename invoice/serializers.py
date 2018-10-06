@@ -1,7 +1,6 @@
 from rest_framework import serializers
 
-from invoice.models import Order
-from invoice.models import OrderDetail
+from invoice.models import Order, OrderDetail
 
 
 class OrderSerializer(serializers.ModelSerializer):
