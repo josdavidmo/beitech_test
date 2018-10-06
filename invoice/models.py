@@ -1,10 +1,4 @@
 from django.db import models
-from pygments.lexers import get_all_lexers
-from pygments.styles import get_all_styles
-
-LEXERS = [item for item in get_all_lexers() if item[1]]
-LANGUAGE_CHOICES = sorted([(item[1][0], item[0]) for item in LEXERS])
-STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
 
 
 class Product(models.Model):
@@ -54,7 +48,7 @@ class Order(models.Model):
 
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     delivery_address = models.CharField(max_length=100)
-    date = models.TimeField(auto_now=True)
+    date = models.DateField()
 
     def __str__(self):
         return "%s %s %s" % (self.customer, self.delivery_address, self.date)

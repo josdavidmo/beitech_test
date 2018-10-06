@@ -1,57 +1,22 @@
 from rest_framework import generics
-
-from invoice.models import (AvailableProduct, Customer, Order, OrderDetail,
-                            Product)
-from invoice.serializers import (AvailableProductSerializer,
-                                 CustomerSerializer, OrderDetailSerializer,
-                                 OrderSerializer, ProductSerializer)
-
-
-class ProductLC(generics.ListCreateAPIView):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializer
+from rest_framework.renderers import JSONRenderer, BrowsableAPIRenderer
+from invoice.renderers import DatatablesRenderer
+from django_filters.rest_framework import DjangoFilterBackend
+from invoice.models import Order
+from invoice.serializers import OrderSerializer
 
 
-class ProductRUD(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializer
-
-
-class CustomerLC(generics.ListCreateAPIView):
-    queryset = Customer.objects.all()
-    serializer_class = CustomerSerializer
-
-
-class CustomerRUD(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Customer.objects.all()
-    serializer_class = ProductSerializer
-
-
-class AvailableProductLC(generics.ListCreateAPIView):
-    queryset = AvailableProduct.objects.all()
-    serializer_class = AvailableProductSerializer
-
-
-class AvailableProductRUD(generics.RetrieveUpdateDestroyAPIView):
-    queryset = AvailableProduct.objects.all()
-    serializer_class = AvailableProductSerializer
-
-
-class OrderLC(generics.ListCreateAPIView):
+class OrderList(generics.ListCreateAPIView):
+    """
+    List all order or create a new order.
+    """
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
+    filter_backends = (DjangoFilterBackend,)
+    filter_fields = {'customer': ['exact'], 'date': ['range']}
+    renderer_classes = (JSONRenderer, BrowsableAPIRenderer, DatatablesRenderer)
 
 
-class OrderRUD(generics.RetrieveUpdateDestroyAPIView):
+class OrderDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
-
-
-class OrderDetailLC(generics.ListCreateAPIView):
-    queryset = OrderDetail.objects.all()
-    serializer_class = OrderDetailSerializer
-
-
-class OrderDetailRUD(generics.RetrieveUpdateDestroyAPIView):
-    queryset = OrderDetail.objects.all()
-    serializer_class = OrderDetailSerializer
