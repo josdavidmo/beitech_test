@@ -44,7 +44,7 @@ Cree una página html que permita seleccionar un cliente y presente las órdenes
 | 01 - 05 - 2017 | 84564 | $ 30.56 | 15 | Queens Park Road, W32 YYY, UK | 2 x Product A, 1 x Product B |
 | 02 - 05 - 2017 | 84566 | $ 11.00 | 12001 | White Oak Avenue, 12332. USA | 1 x Product C |
 
-Notas
+### Notas
 
 - Los datos de prueba para las tablas clientes, productos y productos permitidos se deben insertar directamente en la base de datos.
 - Los datos de prueba para las cualquier tabla adicional que haya creado también se pueden agregar directamente en la base de datos.
@@ -52,7 +52,7 @@ Notas
 - No es necesario implementar un CRUD para cada tabla en la base de datos, los endpoints indispensables para la prueba son: Creación de órden y Listar órdenes por rango de fechas.
 
 
-Entregables
+### Entregables
 
 - El Diagrama Entidad Relación en formato imagen.
 - Los scripts SQL para la creación de la base de datos y los datos de prueba.
@@ -60,8 +60,8 @@ Entregables
 - Diagrama de clases u otros diagramas que considere necesarios para ilustrar la solución.
 - El código fuente de la aplicación. Este código preferiblemente debe estar en un repositorio git.
 
-```
-Tecnologías
-```
+
+### Tecnologías
+
 - Backend: La aplicación debe realizarse preferiblemente utilizando el framework Falcon, Flask o Django
 - Base de datos: Puede utilizar cualquier base de datos relacional.
