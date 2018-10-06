@@ -4,7 +4,7 @@ from invoice.models import (LANGUAGE_CHOICES, STYLE_CHOICES, AvailableProduct,
                             Customer, Order, OrderDetail, Product)
 
 
-class ProductSerializer(serializers.Serializer):
+class ProductSerializer(serializers.ModelSerializer):
     """
     product serializer.
     """
@@ -14,7 +14,7 @@ class ProductSerializer(serializers.Serializer):
         fields = '__all__'
 
 
-class CustomerSerializer(serializers.Serializer):
+class CustomerSerializer(serializers.ModelSerializer):
     """
     customer serializer.
     """
@@ -24,7 +24,7 @@ class CustomerSerializer(serializers.Serializer):
         fields = '__all__'
 
 
-class AvailableProductSerializer(serializers.Serializer):
+class AvailableProductSerializer(serializers.ModelSerializer):
     """
     avaiable product serializer.
     """
@@ -34,7 +34,7 @@ class AvailableProductSerializer(serializers.Serializer):
         fields = '__all__'
 
 
-class OrderSerializer(serializers.Serializer):
+class OrderSerializer(serializers.ModelSerializer):
     """
     order serializer.
     """
@@ -44,7 +44,7 @@ class OrderSerializer(serializers.Serializer):
         fields = '__all__'
 
 
-class OrderDetailSerializer(serializers.Serializer):
+class OrderDetailSerializer(serializers.ModelSerializer):
     """
     order detail serializer.
     """

@@ -7,51 +7,51 @@ from invoice.serializers import (AvailableProductSerializer,
                                  OrderSerializer, ProductSerializer)
 
 
-class ProductList(generics.ListCreateAPIView):
+class ProductLC(generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
 
-class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
+class ProductRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
 
-class CustomerList(generics.ListCreateAPIView):
+class CustomerLC(generics.ListCreateAPIView):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
 
 
-class CustomerDetail(generics.RetrieveUpdateDestroyAPIView):
+class CustomerRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = Customer.objects.all()
     serializer_class = ProductSerializer
 
 
-class AvailableProductList(generics.ListCreateAPIView):
+class AvailableProductLC(generics.ListCreateAPIView):
     queryset = AvailableProduct.objects.all()
     serializer_class = AvailableProductSerializer
 
 
-class AvailableProductDetail(generics.RetrieveUpdateDestroyAPIView):
+class AvailableProductRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = AvailableProduct.objects.all()
     serializer_class = AvailableProductSerializer
 
 
-class OrderList(generics.ListCreateAPIView):
+class OrderLC(generics.ListCreateAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
 
-class OrderDetail(generics.RetrieveUpdateDestroyAPIView):
+class OrderRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
 
-class OrderDetailList(generics.ListCreateAPIView):
+class OrderDetailLC(generics.ListCreateAPIView):
     queryset = OrderDetail.objects.all()
     serializer_class = OrderDetailSerializer
 
 
-class OrderDetailDetail(generics.RetrieveUpdateDestroyAPIView):
+class OrderDetailRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = OrderDetail.objects.all()
     serializer_class = OrderDetailSerializer
