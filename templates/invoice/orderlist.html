@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+</head>
+
+<body>
+  <table id="orders" class="display" style="width:100%">
+    <thead>
+      <tr>
+        <th>Creation Date</th>
+        <th>Order ID</th>
+        <th>Total $</th>
+        <th>Delivery Address</th>
+        <th>Products</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <th>Creation Date</th>
+        <th>Order ID</th>
+        <th>Total $</th>
+        <th>Delivery Address</th>
+        <th>Products</th>
+      </tr>
+    </tfoot>
+  </table>
+
+  <script>
+    $(document).ready(function() {
+      $('#orders').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "ajax": "invoice/order/?format=datatables",
+        "columns": [
+            { "data": "date" },
+            { "data": "id" },
+            { "data": "total" },
+            { "data": "delivery_address" },
+            { "data": "products" }
+        ]
+      });
+    });
+  </script>
+</body>
+
+
+</html>
