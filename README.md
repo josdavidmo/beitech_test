@@ -6,6 +6,8 @@ Se desea realizar ajuste sobre un sistema que permite realizar órdenes de produ
 
 En una base de datos con las siguientes entidades:
 
+![alt text](http://url/to/img.png)
+
 Se desea hacer las siguientes adiciones:
 
 1. Los clientes ahora solo tendrán un conjunto de productos disponibles, es decir, para cada cliente debe ser posible escoger qué productos puede comprar.
