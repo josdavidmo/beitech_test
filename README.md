@@ -41,16 +41,15 @@ El diagrama de clases es el siguiente:
 
 ![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/develop/doc/models.png)
 
-Es posible apreciar que corresponde de forma fidedigna al diagrama relacional de la aplicación.
-
-Este fue generado usando el siguiente comando:
+Es posible apreciar que corresponde de forma fidedigna al diagrama relacional de la aplicación. El diagrama fue generado usando el siguiente comando:
 
 ```
 python manage.py graph\_models invoice -o doc/models.png
 ```
 
-***Nota***:
-Asegurese de tener instalado el siguiente paquete
+***Nota:***
+
+Asegurese de tener instalado el siguiente paquete:
 
 ```
 sudo apt-get install graphviz
@@ -129,8 +128,8 @@ Cree una página html que permita seleccionar un cliente y presente las órdenes
 
 | Creation Date | Order ID | Total $ | Delivery Address | Products |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 01 - 05 - 2017 | 84564 | $ 30.56 | 15 | Queens Park Road, W32 YYY, UK | 2 x Product A, 1 x Product B |
-| 02 - 05 - 2017 | 84566 | $ 11.00 | 12001 | White Oak Avenue, 12332. USA | 1 x Product C |
+| 01 - 05 - 2017 | 84564 | $ 30.56 | 15 | Queens Park Road\, W32 YYY, UK | 2 x Product A\, 1 x Product B |
+| 02 - 05 - 2017 | 84566 | $ 11.00 | 12001 | White Oak Avenue\, 12332. USA | 1 x Product C |
 
 ***Notas***
 

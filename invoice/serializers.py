@@ -17,7 +17,7 @@ class OrderSerializer(serializers.ModelSerializer):
 
     def list_products(self, order):
         order_details = OrderDetail.objects.filter(order=order)
-        return ','.join([order_detail.product.name for order_detail in order_details])
+        return ','.join(["%s x %s" % (order_detail.quantity, order_detail.product.name) for order_detail in order_details])
 
     def create(self, validated_data):
         """
