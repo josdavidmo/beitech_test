@@ -10,5 +10,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('', TemplateView.as_view(template_name="invoice/orderlist.html")),
     path('admin/', admin.site.urls),
-    path('invoice/', include('invoice.urls')),
+    path('docs/', include('rest_framework_docs.urls')),
+    # API
+    path('invoice/', include('invoice.urls',namespace='Invoice')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
