@@ -6,7 +6,7 @@ Se desea realizar ajuste sobre un sistema que permite realizar órdenes de produ
 
 En una base de datos con las siguientes entidades:
 
-![alt text](http://url/to/img.png)
+![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/develop/doc/initial_rem.png)
 
 Se desea hacer las siguientes adiciones:
 
