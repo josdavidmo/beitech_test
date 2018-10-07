@@ -108,7 +108,7 @@ Los datos retornados por este servicio presentan la siguiente estructura:
         "delivery_address": "Calle 26c #13-97",
         "date": "2018-10-01",
         "total": 42271,
-        "products": "Arroz,Azúcar,Consomate"
+        "products": "12 x Arroz,14 x Azúcar,17 x Consomate"
     },
     {
         "customer": 1,
@@ -116,7 +116,7 @@ Los datos retornados por este servicio presentan la siguiente estructura:
         "delivery_address": "Calle 26c #13-97",
         "date": "2018-10-01",
         "total": 31396,
-        "products": "Sopa,Consomate"
+        "products": "47 x Sopa,47 x Consomate"
     }
 ]
 ```
@@ -127,9 +127,17 @@ Cree una página html que permita seleccionar un cliente y presente las órdenes
 último mes usando el método listar órdenes del servicio web.
 
 | Creation Date | Order ID | Total $ | Delivery Address | Products |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| 01 - 05 - 2017 | 84564 | $ 30.56 | 15 Queens Park Road\, W32 YYY, UK | 2 x Product A\, 1 x Product B |
-| 02 - 05 - 2017 | 84566 | $ 11.00 | 12001 White Oak Avenue\, 12332. USA | 1 x Product C |
+| ------------- | ---------| ------- | ---------------- | -------- |
+| 01 - 05 - 2017 | 84564 | $ 30.56 | 15 Queens Park Road, W32 YYY, UK | 2 x Product A, 1 x Product B |
+| 02 - 05 - 2017 | 84566 | $ 11.00 | 12001 White Oak Avenue, 12332. USA | 1 x Product C |
+
+### Creación de HTML
+
+El html fue construido usando la libreria datatables y select2. El datatable fue configurado para consumir el servicio de [/invoice/order/](/invoice/order/) usando el método GET. El funcionamiento del componente se aprecia en la siguiente imagen:
+
+![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/develop/doc/listhtmlorders.png)
+
+El usuario debe seleccionar un usuario y un rango de fechas para realizar el filtro sobre los datos.
 
 ***Notas***
 

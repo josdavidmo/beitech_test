@@ -70,6 +70,8 @@
     }
     $(document).ready(function() {
       table = $('#orders').DataTable({
+        "paging": false,
+        "searching": false,
         "processing": true,
         "serverSide": true,
         "ajax": {
@@ -87,19 +89,24 @@
           }
         },
         "columns": [{
-            "data": "date"
+            "data": "date",
+            "orderable": false
           },
           {
-            "data": "id"
+            "data": "id",
+            "orderable": false
           },
           {
-            "data": "total"
+            "data": "total",
+            "orderable": false
           },
           {
-            "data": "delivery_address"
+            "data": "delivery_address",
+            "orderable": false
           },
           {
-            "data": "products"
+            "data": "products",
+            "orderable": false
           }
         ]
       });
