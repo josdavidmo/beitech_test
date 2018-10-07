@@ -10,6 +10,7 @@ app_name = 'invoice'
 urlpatterns = [
     re_path(r'^order/$', views.OrderList.as_view()),
     re_path(r'^order/(?P<pk>[0-9]+)/$', views.OrderDetail.as_view()),
+    re_path(r'^customer/$', views.CustomerList.as_view()),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

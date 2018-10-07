@@ -26,7 +26,7 @@ class Customer(models.Model):
     email = models.EmailField()
 
     def __str__(self):
-        return "%s %s" % (self.name, self.email)
+        return "%s - %s" % (self.name, self.email)
 
 
 class AvailableProduct(models.Model):
