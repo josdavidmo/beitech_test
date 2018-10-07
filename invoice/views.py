@@ -15,14 +15,11 @@ class OrderList(generics.ListCreateAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
     filter_backends = (DjangoFilterBackend,)
-    filter_fields = {'customer': ['exact'], 'date': ['range','exact']}
+    filter_fields = {'customer': ['exact'], 'date': ['range', 'exact']}
     renderer_classes = (JSONRenderer, BrowsableAPIRenderer, DatatablesRenderer)
 
-class OrderDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Order.objects.all()
-    serializer_class = OrderSerializer
 
-class CustomerList(generics.ListCreateAPIView):
+class CustomerList(generics.ListAPIView):
     """
     List all customer.
     """
