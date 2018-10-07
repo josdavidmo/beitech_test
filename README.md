@@ -24,6 +24,24 @@ Ejemplo:
 
 Agregue al diagrama las columnas y entidades que considere necesarias y cree la base de datos.
 
+### ajustes realizados sobre el modelo
+
+![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/develop/doc/mer.png)
+
+Se realizaron las siguientes modificaciones sobre las entidades:
+
+1. Se elimino la columnas price y product_description de la tabla order_detail.
+2. Se agrego la columnas price y product_description a la tabla product.
+3. Se agrego la columna date en la tabla order.
+4. Se agrego la columnas quantity y product_id a la tabla order_detail.
+5. Se creo la entidad availableproduct y se agregaron las columnas customer_id y product_id.
+6. Se completaron las llaves foraneas a todas las entidades.
+
+El diagrama de clases generado corresponde al siguiente:
+
+![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/develop/doc/models.png)
+
+
 ## Parte 2 - Crear un servicio web REST
 
 Utilizando Python 3, implemente un servicio web REST que permita realizar las siguientes operaciones:
