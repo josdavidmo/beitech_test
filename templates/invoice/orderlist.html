@@ -15,25 +15,31 @@
 <body>
   <form style="border:1px solid black;margin:20px">
     <div class="row" style="margin:20px">
-      <div class="col-sm-4"><h3>Customer:</h3></div>
+      <div class="col-sm-4">
+        <h3>Customer:</h3>
+      </div>
       <div class="col-sm-8"><select id="customer" class="customers" required></select></div>
     </div>
 
     <div class="row" style="margin:20px">
-      <div class="col-sm-4"><h3>Date:</h3></div>
+      <div class="col-sm-4">
+        <h3>Date:</h3>
+      </div>
       <div class="input-group input-daterange col-sm-6">
         <input id="minor_date" type="date" class="form-control">
-        <div class="input-group-addon"><h3>&nbsp;to&nbsp;</h3></div>
+        <div class="input-group-addon">
+          <h3>&nbsp;to&nbsp;</h3>
+        </div>
         <input id="major_date" type="date" class="form-control">
       </div>
     </div>
     <div class="row" style="margin:20px">
-        <button class="btn btn-primary col-sm-2"  type="button" onclick="updateTable()">Filter</button>
+      <button class="btn btn-primary col-sm-2" type="button" onclick="updateTable()">Filter</button>
     </div>
 
   </form>
 
-  <div  style="margin:40px" align="center">
+  <div style="margin:40px" align="center">
     <table id="orders" class="display" style="width:100%">
       <thead>
         <tr>
@@ -58,7 +64,7 @@
 
 
   <script>
-    function updateTable(){
+    function updateTable() {
       table.ajax.reload();
       return false;
     }
@@ -68,16 +74,16 @@
         "serverSide": true,
         "ajax": {
           url: "invoice/order/?format=datatables",
-          data: function (d) {
-              d.customer = $("#customer").val();
-              if($("#minor_date").val() != "" && $("#major_date").val() != "") {
-                d.date__range = $("#minor_date").val()+","+$("#major_date").val();
-              }else if ($("#minor_date").val() != "") {
-                d.date = $("#minor_date").val();
-              }else if ($("#major_date").val() != "") {
-                d.date = $("#major_date").val();
-              }
-              return d;
+          data: function(d) {
+            d.customer = $("#customer").val();
+            if ($("#minor_date").val() != "" && $("#major_date").val() != "") {
+              d.date__range = $("#minor_date").val() + "," + $("#major_date").val();
+            } else if ($("#minor_date").val() != "") {
+              d.date = $("#minor_date").val();
+            } else if ($("#major_date").val() != "") {
+              d.date = $("#major_date").val();
+            }
+            return d;
           }
         },
         "columns": [{
@@ -102,7 +108,7 @@
         ajax: {
           url: 'invoice/customer',
           dataType: 'json',
-          processResults: function (data) {
+          processResults: function(data) {
             return {
               results: data
             };
