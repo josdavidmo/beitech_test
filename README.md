@@ -128,8 +128,8 @@ Cree una página html que permita seleccionar un cliente y presente las órdenes
 
 | Creation Date | Order ID | Total $ | Delivery Address | Products |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 01 - 05 - 2017 | 84564 | $ 30.56 | 15 | Queens Park Road\, W32 YYY, UK | 2 x Product A\, 1 x Product B |
-| 02 - 05 - 2017 | 84566 | $ 11.00 | 12001 | White Oak Avenue\, 12332. USA | 1 x Product C |
+| 01 - 05 - 2017 | 84564 | $ 30.56 | 15 Queens Park Road\, W32 YYY, UK | 2 x Product A\, 1 x Product B |
+| 02 - 05 - 2017 | 84566 | $ 11.00 | 12001 White Oak Avenue\, 12332. USA | 1 x Product C |
 
 ***Notas***
 
