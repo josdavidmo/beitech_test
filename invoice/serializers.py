@@ -47,12 +47,15 @@ class OrderSerializer(serializers.ModelSerializer):
           ]
         }
         """
+
+        order_details = validated_data.get('order_details')
+        if len(order_details) > 5:
+            raise serializers.ValidationError("Only 5 products are allowed")
         order = Order()
         order.customer = validated_data.get('customer')
         order.delivery_address = validated_data.get('delivery_address')
         order.date = validated_data.get('date')
         order.save()
-        order_details = validated_data.get('order_details')
         for order_detail in order_details:
             order_detail_obj = OrderDetail(**order_detail)
             order_detail_obj.order = order
