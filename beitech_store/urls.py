@@ -12,5 +12,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('docs/', include('rest_framework_docs.urls')),
     # API
-    path('invoice/', include('invoice.urls',namespace='Invoice')),
+    path('invoice/', include('invoice.urls',namespace='invoice')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
