@@ -66,13 +66,14 @@ class OrderList(generics.ListCreateAPIView):
 
 class CustomerList(generics.ListAPIView):
     """
-    List all customer.
-
+    get:
+    Return a list of all the existing customer.
     One example of the possible output is the next:
      [{"id":1,"text":"Manny Bharma"},
       {"id":2,"text":"Alan Briggs"},
       {"id":3,"text":"Mike Simm"}]
     """
+
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
     filter_backends = (DjangoFilterBackend,)

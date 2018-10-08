@@ -79,7 +79,7 @@ Utilizando Python 3, implemente un servicio web REST que permita realizar las si
 
 ### creación de servicios web REST
 
-Para el desarrollo de los servicios se utilizó Django2.1.2 usando la libreria djangorestframework3.8.2. Los servicios se encuentran documentados usando drfdocs y es posible visualizar la información sobre el servicio usando el siguiente link [/doc/](http://23.20.151.249/doc/):
+Para el desarrollo de los servicios se utilizó Django2.1.2 usando la libreria djangorestframework3.8.2. Los servicios se encuentran documentados usando drfdocs y es posible visualizar la información sobre el servicio usando el siguiente link [/docs/](http://23.20.151.249/docs/):
 
 ![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/master/doc/swagger.png)
 
