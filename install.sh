@@ -11,5 +11,3 @@ pip3 install -r requirements.txt
 python3 manage.py migrate
 sqlite3 db.sqlite3 < doc/data.sql
 python3 manage.py runserver
-
-sudo apt install virtualenv
