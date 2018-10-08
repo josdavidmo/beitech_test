@@ -30,19 +30,23 @@ sqlite3 db.sqlite3 < doc/data.sql
 python3 manage.py runserver
 ```
 
-El proyecto cuenta con estos comandos en el archivo [install.sh](https://raw.githubusercontent.com/josdavidmo/beitech_test/develop/install.sh). Para ejecutarlo utilice:
+El proyecto cuenta con estos comandos en el archivo [install.sh](https://raw.githubusercontent.com/josdavidmo/beitech_test/master/install.sh). Para ejecutarlo utilice:
 
 ```
 .\ install.sh
 ```
 
-Finalmente, se ha dispuesto una máquina en AWS usando el servicio EC2 para servir el proyecto, usando el siguiente [link]() puede acceder al servicio.
+Para ingresar al administrador de la aplicación debe ingresar al link [/admin/](http://23.20.151.249/admin/). Ingrese beitech y beitech123, ahí podrá crear las entidades a su gusto. En la siguiente imagen se observa el admnistrador de entidades:
+
+![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/master/doc/admin.png)
+
+Finalmente, se ha dispuesto una máquina en AWS usando el servicio EC2 para servir el proyecto, usando el siguiente [link](http://23.20.151.249/) puede acceder al servicio.
 
 ## Parte 1
 
 En una base de datos con las siguientes entidades:
 
-![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/develop/doc/initial_rem.png)
+![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/master/doc/initial_rem.png)
 
 Se desea hacer las siguientes adiciones:
 
@@ -62,7 +66,7 @@ Agregue al diagrama las columnas y entidades que considere necesarias y cree la 
 
 ### ajustes realizados sobre el modelo
 
-![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/develop/doc/mer.png)
+![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/master/doc/mer.png)
 
 Se realizaron las siguientes modificaciones sobre las entidades:
 
@@ -75,7 +79,7 @@ Se realizaron las siguientes modificaciones sobre las entidades:
 
 El diagrama de clases es el siguiente:
 
-![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/develop/doc/models.png)
+![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/master/doc/models.png)
 
 Es posible apreciar que corresponde de forma fidedigna al diagrama relacional de la aplicación. El diagrama fue generado usando el siguiente comando:
 
@@ -92,11 +96,11 @@ Utilizando Python 3, implemente un servicio web REST que permita realizar las si
 
 ### creación de servicios web REST
 
-Para el desarrollo de los servicios se utilizó Django2.1.2 usando la libreria djangorestframework3.8.2. Los servicios se encuentran documentados usando drfdocs y es posible visualizar la información sobre el servicio usando el siguiente link [/doc/](/doc/):
+Para el desarrollo de los servicios se utilizó Django2.1.2 usando la libreria djangorestframework3.8.2. Los servicios se encuentran documentados usando drfdocs y es posible visualizar la información sobre el servicio usando el siguiente link [/doc/](http://23.20.151.249/doc/):
 
-![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/develop/doc/swagger.png)
+![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/master/doc/swagger.png)
 
-1. ***Crear una orden***. Para crear una órden se debe consumir el servicio [/invoice/order/](/invoice/order/) usando el método POST. Los datos para consumir este servicio se deben presentar de la siguiente estructura:
+1. ***Crear una orden***. Para crear una órden se debe consumir el servicio [/invoice/order/](http://23.20.151.249/invoice/order/) usando el método POST. Los datos para consumir este servicio se deben presentar de la siguiente estructura:
 ```
 {
   "customer": 1,
@@ -125,9 +129,9 @@ Para el desarrollo de los servicios se utilizó Django2.1.2 usando la libreria d
 
 El servicio validara que el usuario tenga disponibles los productos asociados y que el order_details no supere más de 5 productos.
 
-2. ***Listar las órdenes***. Para listar las órdenes se debe consumir el servicio [/invoice/order/](/invoice/order/) usando el método GET. Si ingresa usando el navegador visualizara la siguiente imagen:
+2. ***Listar las órdenes***. Para listar las órdenes se debe consumir el servicio [/invoice/order/](http://23.20.151.249/invoice/order/) usando el método GET. Si ingresa usando el navegador visualizara la siguiente imagen:
 
-![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/develop/doc/orderget.png)
+![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/master/doc/orderget.png)
 
 Los datos retornados por este servicio presentan la siguiente estructura:
 ```
@@ -151,7 +155,7 @@ Los datos retornados por este servicio presentan la siguiente estructura:
 ]
 ```
 
-3. ***Listar los usuarios***. Fue necesario agregar el servicio listar usuarios para el uso en la interfaz gráfica, para listar los usuarios se debe consumir el servicio [/invoice/customer/](/invoice/customer/) usando el método GET.
+3. ***Listar los usuarios***. Fue necesario agregar el servicio listar usuarios para el uso en la interfaz gráfica, para listar los usuarios se debe consumir el servicio [/invoice/customer/](http://23.20.151.249/invoice/customer/) usando el método GET.
 
 ## Parte 3
 
@@ -165,9 +169,9 @@ Cree una página html que permita seleccionar un cliente y presente las órdenes
 
 ### Creación de HTML
 
-El html fue construido usando la libreria datatables y select2. El datatable fue configurado para consumir el servicio de [/invoice/order/](/invoice/order/) usando el método GET. El funcionamiento del componente se aprecia en la siguiente imagen:
+El html fue construido usando la libreria datatables y select2. El datatable fue configurado para consumir el servicio de [/invoice/order/](http://23.20.151.249/invoice/order/) usando el método GET. El funcionamiento del componente se aprecia en la siguiente imagen:
 
-![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/develop/doc/listhtmlorders.png)
+![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/master/doc/listhtmlorders.png)
 
 El usuario debe seleccionar un usuario y un rango de fechas para realizar el filtro sobre los datos.
 
