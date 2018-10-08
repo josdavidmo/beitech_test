@@ -10,6 +10,11 @@ class Product(models.Model):
     price = models.PositiveIntegerField()
     product_description = models.TextField()
 
+    class Meta:
+        ordering = ('name',)
+
+    def __str__(self):
+        return "%s %s %s" % (self.name, self.price, self.product_description)
 
 class Customer(models.Model):
     """
@@ -18,6 +23,10 @@ class Customer(models.Model):
 
     name = models.CharField(max_length=100)
     email = models.EmailField()
+
+    def __str__(self):
+        return "%s - %s" % (self.name, self.email)
+
 
 
 class AvailableProduct(models.Model):
@@ -28,6 +37,9 @@ class AvailableProduct(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return "%s %s" % (self.customer, self.product)
+
 
 class Order(models.Model):
     """
@@ -36,7 +48,10 @@ class Order(models.Model):
 
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     delivery_address = models.CharField(max_length=100)
-    date = models.TimeField(auto_now=True)
+    date = models.DateField()
+
+    def __str__(self):
+        return "%s %s %s" % (self.customer, self.delivery_address, self.date)
 
 
 class OrderDetail(models.Model):
@@ -47,3 +62,7 @@ class OrderDetail(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
+
+
+    def __str__(self):
+        return "%s %s %s" % (self.order, self.product, self.quantity)
