@@ -2,6 +2,34 @@
 
 Se desea realizar ajuste sobre un sistema que permite realizar órdenes de productos para clientes.
 
+## Instalación del Proyecto
+
+El proyecto fue desarrollado usando Django2.1.2, para instarlo en un ambiente ubuntu siga las siguientes instrucciones:
+
+```
+mkdir beitech_test
+cd beitech_test
+mkdir beitech_store
+cd beitech_store
+git clone https://github.com/josdavidmo/beitech_test.git .
+cd ..
+virtualenv -p python3 env
+source env/bin/activate
+cd beitech_store
+pip3 install -r beitech_store/requirements.txt
+python3 manage.py migrate
+sqlite3 db.sqlite3 < doc/data.sql
+python3 manage.py runserver
+```
+
+El proyecto cuenta con estos comandos en el archivo [install.sh](https://raw.githubusercontent.com/josdavidmo/beitech_test/develop/install.sh). Para ejecutarlo utilice:
+
+```
+.\ install.sh
+```
+
+Finalmente, se ha dispuesto una máquina en AWS usando el servicio EC2 para servir el proyecto, usando el siguiente [link]() puede acceder al servicio.
+
 ## Parte 1
 
 En una base de datos con las siguientes entidades:
@@ -64,7 +92,9 @@ Utilizando Python 3, implemente un servicio web REST que permita realizar las si
 
 ### creación de servicios web REST
 
-Para el desarrollo de los servicios se utilizó Django2.1.2 usando la libreria djangorestframework3.8.2. Los servicios se encuentran documentados usando Swagger y es posible visualizar la información sobre el servicio usando el siguiente link [/doc/](/doc/).
+Para el desarrollo de los servicios se utilizó Django2.1.2 usando la libreria djangorestframework3.8.2. Los servicios se encuentran documentados usando drfdocs y es posible visualizar la información sobre el servicio usando el siguiente link [/doc/](/doc/):
+
+![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/develop/doc/swagger.png)
 
 1. ***Crear una orden***. Para crear una órden se debe consumir el servicio [/invoice/order/](/invoice/order/) usando el método POST. Los datos para consumir este servicio se deben presentar de la siguiente estructura:
 ```
@@ -95,7 +125,7 @@ Para el desarrollo de los servicios se utilizó Django2.1.2 usando la libreria d
 
 El servicio validara que el usuario tenga disponibles los productos asociados y que el order_details no supere más de 5 productos.
 
-2. ***Listar las órdenes***. Para crear una órden se debe consumir el servicio [/invoice/order/](/invoice/order/) usando el método GET. Si ingresa usando el navegador visualizara la siguiente imagen:
+2. ***Listar las órdenes***. Para listar las órdenes se debe consumir el servicio [/invoice/order/](/invoice/order/) usando el método GET. Si ingresa usando el navegador visualizara la siguiente imagen:
 
 ![alt text](https://raw.githubusercontent.com/josdavidmo/beitech_test/develop/doc/orderget.png)
 
@@ -120,6 +150,8 @@ Los datos retornados por este servicio presentan la siguiente estructura:
     }
 ]
 ```
+
+3. ***Listar los usuarios***. Fue necesario agregar el servicio listar usuarios para el uso en la interfaz gráfica, para listar los usuarios se debe consumir el servicio [/invoice/customer/](/invoice/customer/) usando el método GET.
 
 ## Parte 3
 
