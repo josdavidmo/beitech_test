@@ -7,45 +7,21 @@ class OrderSerializer(serializers.ModelSerializer):
     """
     order serializer.
     """
-    total = serializers.SerializerMethodField('cal_total')
-    products = serializers.SerializerMethodField('list_products')
-    order_details = serializers.JSONField(write_only=True)
+    total = serializers.SerializerMethodField(help_text='sum(quantity_i*product_price_i)')
+    products = serializers.SerializerMethodField(help_text='comma separated list of products and quantities')
+    order_details = serializers.JSONField(write_only=True,help_text='[{"product_id": 1,"quantity": 2}]')
 
-    def cal_total(self, order):
+    def get_total(self, order):
         order_details = OrderDetail.objects.filter(order=order)
         return sum([order_detail.product.price * order_detail.quantity for order_detail in order_details])
 
-    def list_products(self, order):
+    def get_products(self, order):
         order_details = OrderDetail.objects.filter(order=order)
         return ','.join(["%s x %s" % (order_detail.quantity, order_detail.product.name) for order_detail in order_details])
 
     def create(self, validated_data):
         """
         Create and return a new `Order` instance, given the validated data.
-        order_details param must be an json list like this
-        {
-          "customer": 1,
-          "delivery_address": "Diagonal 86a # 101 - 40",
-          "date": "2018-10-06",
-          "order_details": [
-            {
-              "product_id": 1,
-              "quantity": 2
-            },
-            {
-              "product_id": 2,
-              "quantity": 1
-            },
-            {
-              "product_id": 3,
-              "quantity": 41
-            },
-            {
-              "product_id": 4,
-              "quantity": 54
-            }
-          ]
-        }
         """
 
         order_details = validated_data.get('order_details')
@@ -89,9 +65,9 @@ class CustomerSerializer(serializers.ModelSerializer):
     """
     customer serializer.
     """
-    text = serializers.SerializerMethodField('get_string')
+    text = serializers.SerializerMethodField(help_text='customer name')
 
-    def get_string(self, customer):
+    def get_text(self, customer):
         return customer.name
 
     class Meta:

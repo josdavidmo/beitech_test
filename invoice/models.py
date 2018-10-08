@@ -46,9 +46,9 @@ class Order(models.Model):
     table for order.
     """
 
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    delivery_address = models.CharField(max_length=100)
-    date = models.DateField()
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, help_text='customer who made the order')
+    delivery_address = models.CharField(max_length=100, help_text='customer delivery address')
+    date = models.DateField(help_text='date order processing')
 
     def __str__(self):
         return "%s %s %s" % (self.customer, self.delivery_address, self.date)
