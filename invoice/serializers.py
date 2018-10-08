@@ -71,6 +71,7 @@ class OrderSerializer(serializers.ModelSerializer):
         """
         Update and return an existing `Order` instance, given the validated data.
         """
+
         instance.customer = validated_data.get('customer', instance.customer)
         instance.delivery_address = validated_data.get(
             'delivery_address', instance.delivery_address)

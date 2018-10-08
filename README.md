@@ -138,6 +138,14 @@ Los datos retornados por este servicio presentan la siguiente estructura:
 ]
 ```
 
+Es posible realizar filtros por los siguientes parametros customer, date o data__range:
+
+```
+http://localhost:8000/invoice/order/?format=datatables&customer=1, if you want filter only by customer
+http://localhost:8000/invoice/order/?format=datatables&customer=1&date=2018-10-01, if you want filter by customer and specific date
+http://localhost:8000/invoice/order/?format=datatables&customer=1&date__range=2018-10-01,2018-10-05, if you want filter by customer and specific range date
+```
+
 3. ***Listar los usuarios***. Fue necesario agregar el servicio listar usuarios para el uso en la interfaz gráfica, para listar los usuarios se debe consumir el servicio [/invoice/customer/](http://23.20.151.249/invoice/customer/) usando el método GET.
 
 ## Parte 3
