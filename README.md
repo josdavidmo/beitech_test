@@ -6,6 +6,14 @@ Se desea realizar ajuste sobre un sistema que permite realizar órdenes de produ
 
 El proyecto fue desarrollado usando Django2.1.2, para instarlo en un ambiente ubuntu siga las siguientes instrucciones:
 
+Asegurese de tener instalado los siguientes paquetes:
+
+```
+sudo apt install virtualenv
+sudo apt install sqlite3
+sudo apt-get install graphviz
+```
+
 ```
 mkdir beitech_test
 cd beitech_test
@@ -16,7 +24,7 @@ cd ..
 virtualenv -p python3 env
 source env/bin/activate
 cd beitech_store
-pip3 install -r beitech_store/requirements.txt
+pip3 install -r requirements.txt
 python3 manage.py migrate
 sqlite3 db.sqlite3 < doc/data.sql
 python3 manage.py runserver
@@ -73,14 +81,6 @@ Es posible apreciar que corresponde de forma fidedigna al diagrama relacional de
 
 ```
 python manage.py graph\_models invoice -o doc/models.png
-```
-
-***Nota:***
-
-Asegurese de tener instalado el siguiente paquete:
-
-```
-sudo apt-get install graphviz
 ```
 
 ## Parte 2 - Crear un servicio web REST
