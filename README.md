@@ -13,24 +13,7 @@ sudo apt install virtualenv
 sudo apt install sqlite3
 sudo apt-get install graphviz
 ```
-
-```
-mkdir beitech_test
-cd beitech_test
-mkdir beitech_store
-cd beitech_store
-git clone https://github.com/josdavidmo/beitech_test.git .
-cd ..
-virtualenv -p python3 env
-source env/bin/activate
-cd beitech_store
-pip3 install -r requirements.txt
-python3 manage.py migrate
-sqlite3 db.sqlite3 < doc/data.sql
-python3 manage.py runserver
-```
-
-El proyecto cuenta con estos comandos en el archivo [install.sh](https://raw.githubusercontent.com/josdavidmo/beitech_test/master/install.sh). Para ejecutarlo utilice:
+El proyecto cuenta con el archivo [install.sh](https://raw.githubusercontent.com/josdavidmo/beitech_test/master/install.sh) para realizar la instalación. Para ejecutarlo utilice:
 
 ```
 .\ install.sh
